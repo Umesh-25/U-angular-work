@@ -1,0 +1,29 @@
+<h2>App Compnent</h2>
+<div>
+  <form [formGroup]="form">
+    <label> Enter Name</label>&nbsp;
+    <input
+      type="text"
+      formControlName="name"
+      [ngClass]="{ textCOLOR: form.get('name').status == 'INVALID' }"
+    /><br /><br />
+    <div formArrayName="pfArray">
+      <tr *ngFor="let arr of form.get('pfArray')['controls']; index as i">
+        <td>
+          <input
+            type="text"
+            formControlName="{{ i }}"
+            [ngClass]="{
+              textCOLOR: form.get('pfArray')['controls'][i].status == 'INVALID'
+            }"
+          />
+        </td>
+        &nbsp;<button (click)="addArray()">Add</button
+        >&nbsp;
+        <button (click)="removeArray(i)">Remove</button>
+        <br /><br />
+      </tr>
+    </div>
+    <br />
+  </form>
+</div>
