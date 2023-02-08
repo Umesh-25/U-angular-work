@@ -1,5 +1,5 @@
-<h2>App Compnent</h2>
-<div>
+<!-- <h2>App Compnent</h2> -->
+<!-- <div>
   <form [formGroup]="form">
     <label> Enter Name</label>&nbsp;
     <input
@@ -20,10 +20,14 @@
         </td>
         &nbsp;<button (click)="addArray()">Add</button
         >&nbsp;
-        <button (click)="removeArray(i)">Remove</button>
+        <button *ngIf="i != 0" (click)="removeArray(i)">Remove</button>
         <br /><br />
       </tr>
     </div>
     <br />
   </form>
+</div> -->
+
+<div>
+<router-outlet></router-outlet>
 </div>

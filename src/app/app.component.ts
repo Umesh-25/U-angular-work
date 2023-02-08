@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'my-app',
@@ -14,28 +15,29 @@ import {
 })
 export class AppComponent implements OnInit {
   form: FormGroup;
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,private router:Router) {}
 
   ngOnInit() {
-    this.form = new FormGroup({
-      name: new FormControl('', Validators.required),
-      pfArray: new FormArray([new FormControl('', Validators.required)]),
-    });
+    this.router.navigate(['./login'])
+  //   this.form = new FormGroup({
+  //     name: new FormControl('', Validators.required),
+  //     pfArray: new FormArray([new FormControl('', Validators.required)]),
+  //   });
   }
-  get nArray() {
-    return this.form.controls;
-  }
-  get fArray() {
-    return this.nArray.pfArray as FormArray;
-  }
-  addArray() {
-    this.form
-      .get('pfArray')
-      ['controls'].push(new FormControl('', Validators.required));
-  }
+  // get nArray() {
+  //   return this.form.controls;
+  // }
+  // get fArray() {
+  //   return this.nArray.pfArray as FormArray;
+  // }
+  // addArray() {
+  //   this.form
+  //     .get('pfArray')
+  //     ['controls'].push(new FormControl('', Validators.required));
+  // }
 
-  removeArray(index) {
-    // this.form.get('pfArray')['controls'].removeAt(index);
-    this.fArray.removeAt(index);
-  }
+  // removeArray(index) {
+  //   // this.form.get('pfArray')['controls'].removeAt(index);
+  //   this.fArray.removeAt(index);
+  // }
 }
