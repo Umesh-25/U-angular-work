@@ -7,8 +7,16 @@ import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    AuthModule,
+  ],
+  
   exports: [],
-  imports: [BrowserModule,FormsModule,ReactiveFormsModule,AppRoutingModule, AuthModule],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}
