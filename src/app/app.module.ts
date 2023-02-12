@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './modules/auth/auth.module';
+import { ChangeDirective } from './customDirective/change.directive';
 
 @NgModule({
-  declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -14,6 +14,8 @@ import { AuthModule } from './modules/auth/auth.module';
     AppRoutingModule,
     AuthModule,
   ],
+  declarations: [AppComponent,ChangeDirective],
+  
   
   exports: [],
 
