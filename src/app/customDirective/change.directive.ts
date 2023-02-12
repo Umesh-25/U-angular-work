@@ -24,7 +24,7 @@ export class ChangeDirective {
         debugger;
         clearInterval(this.inter);
         console.log('clear Intervel')
-        this.router.navigate(['./other/home']);
+        this.router.navigate(['./auth/login']);
       }
     
     }, 1000);

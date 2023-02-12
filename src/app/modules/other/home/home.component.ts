@@ -12,4 +12,8 @@ export class HomeComponent {
     debugger
     this.router.navigate(['./auth/login'])
   }
+
+  onClickAbout(){
+    this.router.navigate(['./other/about'])
+  }
 }
