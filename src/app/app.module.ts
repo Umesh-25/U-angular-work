@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './modules/auth/auth.module';
 import { ChangeDirective } from './customDirective/change.directive';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -14,10 +15,10 @@ import { ChangeDirective } from './customDirective/change.directive';
     AppRoutingModule,
     AuthModule,
   ],
-  declarations: [AppComponent,ChangeDirective],
-  
-  
+  declarations: [AppComponent, ChangeDirective],
+
   exports: [],
+  providers: [DatePipe],
 
   bootstrap: [AppComponent],
 })
