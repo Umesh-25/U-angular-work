@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './modules/auth/auth.module';
 import { ChangeDirective } from './customDirective/change.directive';
 import { DatePipe } from '@angular/common';
+import { TextValidationPipe } from './customPipe/textValodation.pipe';
 
 @NgModule({
+  declarations: [AppComponent, ChangeDirective],
   imports: [
     BrowserModule,
     FormsModule,
@@ -15,7 +17,6 @@ import { DatePipe } from '@angular/common';
     AppRoutingModule,
     AuthModule,
   ],
-  declarations: [AppComponent, ChangeDirective],
 
   exports: [],
   providers: [DatePipe],

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  name:number=10
   constructor(private router: Router) {}
   login() {
     debugger;

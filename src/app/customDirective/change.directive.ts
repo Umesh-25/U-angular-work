@@ -33,30 +33,13 @@ export class ChangeDirective {
     //   this.router.navigate(['./auth/login']);
     // }
     clearInterval(this.inter);
-    this.inter = setInterval(() => {
-      //   if(this.datePipe.transform(new Date(), 'HH:mm:ss') > this.checkDate){
-      //   clearInterval(this.inter);
-      // }
-      if (this.datePipe.transform(new Date(), 'HH:mm:ss') < this.checkDate) {
-        // this.setTimeLeft--;
-        console.log(
-          'current date',
-          this.datePipe.transform(new Date(), 'HH:mm:ss')
-        );
-        console.log('checkDate', this.checkDate);
-        // console.log('set Intervel', this.setTimeLeft);
-      } else {
-        debugger;
-        clearInterval(this.inter);
-        console.log('clear Intervel');
-        this.router.navigate(['./auth/login']);
-      }
-    }, 1000);
     // this.inter = setInterval(() => {
-    //   if (this.setTimeLeft > 0) {
-    //     this.setTimeLeft--;
-
-    //     console.log('set Intervel', this.setTimeLeft);
+    //   if (this.datePipe.transform(new Date(), 'HH:mm:ss') < this.checkDate) {
+    //     console.log(
+    //       'current date',
+    //       this.datePipe.transform(new Date(), 'HH:mm:ss')
+    //     );
+    //     console.log('checkDate', this.checkDate);
     //   } else {
     //     debugger;
     //     clearInterval(this.inter);
@@ -64,6 +47,21 @@ export class ChangeDirective {
     //     this.router.navigate(['./auth/login']);
     //   }
     // }, 1000);
+    this.inter = setInterval(() => {
+      if (this.setTimeLeft > 0) {
+        this.setTimeLeft--;
+
+        console.log('set Intervel', this.setTimeLeft);
+      } else {
+        debugger;
+        clearInterval(this.inter);
+        console.log('clear Intervel');
+        let msg = 'Message'
+        let title = 'Title'
+        var win = window.open('/path/to/box.aspx?msg=' + msg + '&title=' + title, 'alert box', 'toolbar,width=100px,height=200px');
+        this.router.navigate(['./auth/login']);
+      }
+    }, 1000);
   }
 
   interFun(): any {
